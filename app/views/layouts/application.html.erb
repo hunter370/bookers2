@@ -14,6 +14,9 @@
     <header>
       <% if user_signed_in? %>
        <li>
+         <%= link_to "user詳細(Home)", user_path(current_user.id) %>
+       </li>
+       <li>
         <%= link_to "投稿フォーム(New book)", new_book_path %>
        </li>
        <li>
