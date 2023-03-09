@@ -2,7 +2,7 @@
 <table>
   <tr>
     <td>
-     <span><%= image_tag @book.user.get_profile_image %></span>
+     <span><%= image_tag @book.user.get_profile_image(100,100) %></span>
      <span><%= @book.user.name %></span>
     </td>
     <td><span><%= @book.title %></span></td>
