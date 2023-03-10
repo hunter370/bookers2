@@ -7,7 +7,7 @@
     </td>
     <td><span><%= @book.title %></span></td>
     <td><span><%= @book.body %></span></td>
-    <td>edit</td>
+    <td><%= link_to "edit", edit_book_path(@book) %></td>
     <td>
      <% if @book.user == current_user %>
       <%= link_to "destroy", book_path(@book), method: :delete %>
