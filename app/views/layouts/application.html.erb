@@ -6,41 +6,48 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <span><%= link_to "Bookers", root_path %></span>
       <% if user_signed_in? %>
-       <li>
+      <ul class="navbar-nav ml-auto">
+       <li class="nav-link text-light">
          <%= link_to "user詳細(Home)", user_path(current_user.id) %>
        </li>
-       <li>
+       <li class="nav-link text-light">
          <%= link_to "Users(user一覧)", users_path %>
        </li>
-       <li>
+       <li class="nav-link text-light">
          <%= link_to "投稿一覧(Books)", books_path %>
        </li>
-       <li>
+       <li class="nav-link text-light">
          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
        </li>
        <li>
          <%= link_to "New book", new_book_path %>
        </li>
       <% else %>
-       <li>
+       <li class="nav-link text-light">
          <%= link_to "Home", root_path %>
        </li>
-       <li>
+       <li class="nav-link text-light">
          <%= link_to "About", about_path %>
-       <li>
+       <li class="nav-link text-light">
          <%= link_to "Sign up", new_user_registration_path %>
        </li>
-       <li>
+       <li class="nav-link text-light">
          <%= link_to "Log in", new_user_session_path %>
        </li>
+      </ul>
       <% end %>
+      </div>
+      </nav>
     </header>
     <%= yield %>
   </body>
