@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Bookers2</title>
+    <script src="https://kit.fontawesome.com/e6318b94ab.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -14,32 +15,32 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <span><%= link_to "Bookers", root_path %></span>
+        <span><%= link_to "Bookers", root_path, class: "navbar-brand" %></span>
       <% if user_signed_in? %>
       <ul class="navbar-nav ml-auto">
-       <li class="nav-link text-light">
-         <%= link_to "user詳細(Home)", user_path(current_user.id) %>
+       <li>
+         <%= link_to "user詳細(Home)", user_path(current_user.id), class: "nav-link text-light" %>
        </li>
-       <li class="nav-link text-light">
-         <%= link_to "Users(user一覧)", users_path %>
+       <li>
+         <%= link_to "Users(user一覧)", users_path, class: "nav-link text-light" %>
        </li>
-       <li class="nav-link text-light">
-         <%= link_to "投稿一覧(Books)", books_path %>
+       <li>
+         <%= link_to "投稿一覧(Books)", books_path, class: "nav-link text-light" %>
        </li>
-       <li class="nav-link text-light">
-         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+       <li>
+         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link text-light" %>
        </li>
       <% else %>
-       <li class="nav-link text-light">
-         <%= link_to "Home", root_path %>
+       <li>
+         <%= link_to "Home", root_path, class: "nav-link text-light" %>
        </li>
-       <li class="nav-link text-light">
-         <%= link_to "About", about_path %>
-       <li class="nav-link text-light">
-         <%= link_to "Sign up", new_user_registration_path %>
+       <li>
+         <%= link_to "About", about_path, class: "nav-link text-light" %>
+       <li>
+         <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-light" %>
        </li>
-       <li class="nav-link text-light">
-         <%= link_to "Log in", new_user_session_path %>
+       <li>
+         <%= link_to "Log in", new_user_session_path, class: "nav-link text-light" %>
        </li>
       </ul>
       <% end %>
