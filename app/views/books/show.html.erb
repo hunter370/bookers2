@@ -54,9 +54,19 @@
   <tr>
     <td>
      <span><%= image_tag @book.user.get_profile_image(100,100) %></span>
-     <span><%= @book.user.name %></span>
+     <span>
+      <%=link_to user_path(@user.id) do %>
+       <%= @book.user.name %>
+      <% end %>
+     </span>
     </td>
-    <td><span><%= @book.title %></span></td>
+    <td>
+     <span>
+      <%= link_to book_path(@book.id) do %>
+       <%= @book.title %>
+      <% end %>
+      </span>
+      </td>
     <td><span><%= @book.body %></span></td>
     <td>
      <% if @book.user == current_user %>
